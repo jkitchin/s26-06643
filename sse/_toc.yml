@@ -34,6 +34,7 @@ parts:
       - file: optional/uv/uv
       - file: optional/release-lifecycle/release-lifecycle
       - file: optional/scientific-computing/scientific-computing
+      - file: optional/ai-human-factors/ai-human-factors
 
   - caption: Assignments
     chapters:
