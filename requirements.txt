@@ -8,7 +8,7 @@ notebook
 jupyterlab
 
 # Jupyter Book
-jupyter-book
+jupyter-book<2.0
 sphinx
 
 # HTTP and APIs
