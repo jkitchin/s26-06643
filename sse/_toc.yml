@@ -32,6 +32,8 @@ parts:
       - file: optional/cli-tools/cli-tools
       - file: optional/profiling/profiling
       - file: optional/uv/uv
+      - file: optional/release-lifecycle/release-lifecycle
+      - file: optional/scientific-computing/scientific-computing
 
   - caption: Assignments
     chapters:

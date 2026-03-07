@@ -24,7 +24,7 @@ This course teaches modern software development practices for scientific researc
 |    6 | Documentation, Configuring and Extending AI Agents |
 |    7 | Project Presentations |
 
-Optional lectures cover Python classes, ethics/copyright/licensing, web apps, security, databases, CLI tools, profiling/optimization, and uv (modern Python package management).
+Optional lectures cover Python classes, ethics/copyright/licensing, web apps, security, databases, CLI tools, profiling/optimization, uv (modern Python package management), release lifecycle (versioning, changelogs, PyPI publishing), and scientific computing pitfalls (floating-point, units, validation).
 
 * Getting Started
 
