@@ -1,0 +1,395 @@
+{
+  "metadata": {
+    "course": "Scientific Software Engineering",
+    "version": "1.0",
+    "description": "Scavenger hunts across web, documentation, and code"
+  },
+  "hunt_types": {
+    "web": "Find resources and documentation online",
+    "docs": "Explore official documentation",
+    "codebase": "Explore course code and examples",
+    "oss": "Explore open source projects"
+  },
+  "hunts": [
+    {
+      "id": "hunt-git-01",
+      "name": "Git Documentation Explorer",
+      "type": "docs",
+      "difficulty": "easy",
+      "lectures_required": ["02-git-version-control"],
+      "description": "Gina Git's scavenger hunt: Master the official docs",
+      "tasks": [
+        {
+          "task": "Find the official Git documentation for 'git reflog'",
+          "deliverable": "Link and one useful option you discovered",
+          "points": 10
+        },
+        {
+          "task": "Find GitHub's guide on resolving merge conflicts",
+          "deliverable": "Link and brief summary of recommended approach",
+          "points": 10
+        },
+        {
+          "task": "Find a git cheat sheet (official or highly-rated)",
+          "deliverable": "Link and your 3 favorite commands from it",
+          "points": 10
+        }
+      ],
+      "bonus": {
+        "task": "Find the Pro Git book online (free) and read one chapter",
+        "points": 15
+      },
+      "total_points": 45
+    },
+    {
+      "id": "hunt-python-packaging-01",
+      "name": "Python Packaging Deep Dive",
+      "type": "docs",
+      "difficulty": "medium",
+      "lectures_required": ["04-python-packaging"],
+      "description": "Vinny Virtual's hunt: Understand Python packaging",
+      "tasks": [
+        {
+          "task": "Find the official Python Packaging User Guide",
+          "deliverable": "Link to the main page",
+          "points": 5
+        },
+        {
+          "task": "Find documentation on pyproject.toml format",
+          "deliverable": "Link and list 3 required/common fields",
+          "points": 15
+        },
+        {
+          "task": "Find the difference between setup.py and pyproject.toml",
+          "deliverable": "Explanation of when to use each",
+          "points": 15
+        },
+        {
+          "task": "Find TestPyPI (test package index) documentation",
+          "deliverable": "Link and steps to publish a test package",
+          "points": 15
+        }
+      ],
+      "bonus": {
+        "task": "Find and summarize PEP 517 (build system specification)",
+        "points": 15
+      },
+      "total_points": 65
+    },
+    {
+      "id": "hunt-testing-01",
+      "name": "Testing Tools Discovery",
+      "type": "docs",
+      "difficulty": "medium",
+      "lectures_required": ["05-testing-with-ai"],
+      "description": "Tessa Test's hunt: Explore testing tools",
+      "tasks": [
+        {
+          "task": "Find the pytest documentation",
+          "deliverable": "Link and list 3 useful command-line options",
+          "points": 10
+        },
+        {
+          "task": "Find documentation on pytest fixtures",
+          "deliverable": "Link and explain 'scope' parameter",
+          "points": 15
+        },
+        {
+          "task": "Find pytest-cov documentation (coverage plugin)",
+          "deliverable": "Link and explain what coverage percentage to aim for",
+          "points": 10
+        },
+        {
+          "task": "Find hypothesis library (property-based testing)",
+          "deliverable": "Link and one-paragraph explanation of what it does",
+          "points": 15
+        }
+      ],
+      "bonus": {
+        "task": "Find pytest's list of plugins and pick one interesting one to explore",
+        "points": 15
+      },
+      "total_points": 65
+    },
+    {
+      "id": "hunt-quality-01",
+      "name": "Code Quality Tools Safari",
+      "type": "web",
+      "difficulty": "medium",
+      "lectures_required": ["06-code-quality"],
+      "description": "Rita Readable's hunt: Discover quality tools",
+      "tasks": [
+        {
+          "task": "Find the Black code formatter documentation",
+          "deliverable": "Link and explain the 'uncompromising' philosophy",
+          "points": 10
+        },
+        {
+          "task": "Find ruff (fast Python linter) documentation",
+          "deliverable": "Link and list 3 things it can check for",
+          "points": 15
+        },
+        {
+          "task": "Find mypy (type checker) documentation",
+          "deliverable": "Link and explain 'strict mode'",
+          "points": 15
+        },
+        {
+          "task": "Find pre-commit documentation",
+          "deliverable": "Link and example .pre-commit-config.yaml",
+          "points": 15
+        }
+      ],
+      "bonus": {
+        "task": "Set up pre-commit with black, ruff, and mypy on a test project",
+        "points": 20
+      },
+      "total_points": 75
+    },
+    {
+      "id": "hunt-oss-01",
+      "name": "Open Source Exploration",
+      "type": "oss",
+      "difficulty": "medium",
+      "lectures_required": ["08-github-collaboration"],
+      "description": "Oliver Open-Source's hunt: Explore real projects",
+      "tasks": [
+        {
+          "task": "Find a scientific Python project with 'good first issue' labels",
+          "deliverable": "Link to project and one good first issue",
+          "points": 15
+        },
+        {
+          "task": "Find a project's CONTRIBUTING.md guide",
+          "deliverable": "Link and summarize the contribution process",
+          "points": 15
+        },
+        {
+          "task": "Find a well-written pull request with good code review",
+          "deliverable": "Link and explain what makes the review good",
+          "points": 15
+        },
+        {
+          "task": "Find GitHub's guide on open source contribution",
+          "deliverable": "Link and 3 key tips",
+          "points": 10
+        }
+      ],
+      "bonus": {
+        "task": "Find and fix a typo in any open source project (submit PR!)",
+        "points": 25
+      },
+      "total_points": 80
+    },
+    {
+      "id": "hunt-actions-01",
+      "name": "GitHub Actions Workshop",
+      "type": "docs",
+      "difficulty": "hard",
+      "lectures_required": ["09-github-actions"],
+      "description": "Wendy Workflow's hunt: Master CI/CD",
+      "tasks": [
+        {
+          "task": "Find GitHub Actions documentation",
+          "deliverable": "Link to main docs page",
+          "points": 5
+        },
+        {
+          "task": "Find documentation on workflow syntax",
+          "deliverable": "Link and explain 'matrix' strategy",
+          "points": 15
+        },
+        {
+          "task": "Find the actions/setup-python action documentation",
+          "deliverable": "Link and list available options",
+          "points": 10
+        },
+        {
+          "task": "Find a reusable workflow example",
+          "deliverable": "Link and explain when reusable workflows help",
+          "points": 15
+        },
+        {
+          "task": "Find documentation on secrets management in Actions",
+          "deliverable": "Link and explain how to use secrets safely",
+          "points": 15
+        }
+      ],
+      "bonus": {
+        "task": "Create a workflow that tests on multiple Python versions (3.9, 3.10, 3.11)",
+        "points": 20
+      },
+      "total_points": 80
+    },
+    {
+      "id": "hunt-docs-01",
+      "name": "Documentation Tools Quest",
+      "type": "web",
+      "difficulty": "medium",
+      "lectures_required": ["10-documentation"],
+      "description": "Doc Douglas's hunt: Documentation deep dive",
+      "tasks": [
+        {
+          "task": "Find Sphinx documentation",
+          "deliverable": "Link and list 3 output formats Sphinx supports",
+          "points": 10
+        },
+        {
+          "task": "Find Read the Docs service documentation",
+          "deliverable": "Link and explain how to set up automatic doc building",
+          "points": 15
+        },
+        {
+          "task": "Find Google or NumPy docstring style guide",
+          "deliverable": "Link and show an example docstring",
+          "points": 10
+        },
+        {
+          "task": "Find MkDocs (alternative to Sphinx) documentation",
+          "deliverable": "Link and compare to Sphinx (when to use each)",
+          "points": 15
+        }
+      ],
+      "bonus": {
+        "task": "Build and deploy documentation for a small project to GitHub Pages or RTD",
+        "points": 25
+      },
+      "total_points": 75
+    },
+    {
+      "id": "hunt-mcp-01",
+      "name": "MCP Discovery Quest",
+      "type": "web",
+      "difficulty": "hard",
+      "lectures_required": ["11-advanced-mcp"],
+      "description": "Morgan MCP's hunt: Explore the MCP ecosystem",
+      "tasks": [
+        {
+          "task": "Find the official MCP specification",
+          "deliverable": "Link to specification",
+          "points": 10
+        },
+        {
+          "task": "Find the Python MCP SDK documentation",
+          "deliverable": "Link and list available decorators/functions",
+          "points": 15
+        },
+        {
+          "task": "Find examples of MCP servers for scientific tools",
+          "deliverable": "Links to 2-3 examples with descriptions",
+          "points": 20
+        },
+        {
+          "task": "Find documentation on MCP tool schemas",
+          "deliverable": "Link and explain how to define tool parameters",
+          "points": 15
+        }
+      ],
+      "bonus": {
+        "task": "Create a simple MCP server that provides a useful tool for your research",
+        "points": 30
+      },
+      "total_points": 90
+    },
+    {
+      "id": "hunt-codebase-01",
+      "name": "Course Code Explorer",
+      "type": "codebase",
+      "difficulty": "easy",
+      "lectures_required": ["05-testing-with-ai", "06-code-quality"],
+      "description": "Explore patterns in course notebooks and examples",
+      "tasks": [
+        {
+          "task": "Find an example of a pytest fixture in course code",
+          "deliverable": "File and line number, plus what it does",
+          "points": 10
+        },
+        {
+          "task": "Find an example of type hints in course code",
+          "deliverable": "File and function showing type hints",
+          "points": 10
+        },
+        {
+          "task": "Find the course's pyproject.toml or setup configuration",
+          "deliverable": "File location and list of dependencies",
+          "points": 10
+        }
+      ],
+      "bonus": {
+        "task": "Find a potential improvement in course code and suggest a fix",
+        "points": 15
+      },
+      "total_points": 45
+    },
+    {
+      "id": "hunt-ai-01",
+      "name": "AI-Assisted Development Resources",
+      "type": "web",
+      "difficulty": "easy",
+      "lectures_required": ["00-ai-assisted-development"],
+      "description": "Claude Coder's hunt: AI development resources",
+      "tasks": [
+        {
+          "task": "Find Anthropic's documentation on Claude",
+          "deliverable": "Link to main documentation",
+          "points": 10
+        },
+        {
+          "task": "Find best practices for prompting code assistants",
+          "deliverable": "Link and 3 key tips",
+          "points": 15
+        },
+        {
+          "task": "Find an article about limitations of AI code generation",
+          "deliverable": "Link and main concerns raised",
+          "points": 15
+        }
+      ],
+      "bonus": {
+        "task": "Document a coding session showing effective AI collaboration",
+        "points": 15
+      },
+      "total_points": 55
+    },
+    {
+      "id": "hunt-security-01",
+      "name": "Security Best Practices",
+      "type": "web",
+      "difficulty": "hard",
+      "lectures_required": ["08-github-collaboration", "09-github-actions"],
+      "description": "Learn about security in software development",
+      "tasks": [
+        {
+          "task": "Find GitHub's security features documentation",
+          "deliverable": "Link and list 3 security features available",
+          "points": 15
+        },
+        {
+          "task": "Find documentation on Dependabot",
+          "deliverable": "Link and explain what it does",
+          "points": 15
+        },
+        {
+          "task": "Find OWASP's secure coding practices",
+          "deliverable": "Link and 3 practices relevant to Python",
+          "points": 15
+        },
+        {
+          "task": "Find how to safely manage secrets in GitHub Actions",
+          "deliverable": "Link and explain best practices",
+          "points": 15
+        }
+      ],
+      "bonus": {
+        "task": "Enable Dependabot on one of your repositories",
+        "points": 15
+      },
+      "total_points": 75
+    }
+  ],
+  "leaderboard": {
+    "enabled": true,
+    "display_top": 10,
+    "categories": ["total_points", "hunts_completed", "bonus_points"]
+  }
+}

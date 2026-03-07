@@ -1,0 +1,374 @@
+{
+  "metadata": {
+    "title": "The Software Forge: Crisis Mode",
+    "course": "Scientific Software Engineering",
+    "version": "1.0",
+    "total_chapters": 8,
+    "description": "A choose-your-own-adventure where you solve software crises at the legendary Software Forge"
+  },
+  "story_intro": "Welcome to the Software Forge, a legendary workshop where the world's most critical scientific software is crafted. As a new apprentice, you'll face real challenges that test your growing skills. Each crisis you solve brings you closer to becoming a Master Craftsperson.",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "The Git Disaster",
+      "lectures_required": ["00-ai-assisted-development", "01-terminals", "02-git-version-control"],
+      "characters": ["Gina Git", "Terry Terminal", "Claude Coder"],
+      "narrative": "Your first week at the Forge, and chaos erupts. A junior developer at NanoSim Labs accidentally pushed API keys to the public repository, then tried to fix it by force-pushing to main—wiping out three days of critical simulation code.\n\nGina Git rushes to your workstation, version history swirling in her eyes. 'We need to recover that code AND scrub the sensitive data from the history. The simulation is needed for tomorrow's grant deadline!'\n\nTerry Terminal appears beside you. 'The command line is your friend here. But choose wisely—one wrong command and we could make this worse.'\n\nClaude Coder offers assistance: 'I can help you think through the git commands, but you'll need to understand what we're doing. This isn't a situation for blind copy-paste.'",
+      "decision_point": "How do you approach the recovery?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Use git reflog to find the lost commits, then cherry-pick them to a new branch",
+          "outcome": "optimal",
+          "points": 100,
+          "feedback": "Excellent! git reflog shows all recent HEAD movements, even those 'lost' by force push. You find the commit hashes and cherry-pick them safely.",
+          "next_situation": "Now you need to remove the API keys from history. You use git filter-branch to rewrite history, then force-push the cleaned version. Crisis averted!"
+        },
+        {
+          "id": "B",
+          "text": "Check if anyone has a local copy with the recent commits",
+          "outcome": "good",
+          "points": 75,
+          "feedback": "Smart thinking about distributed version control! Another developer had pulled yesterday. You coordinate to push their local copy to a recovery branch.",
+          "next_situation": "The code is saved, but you still need to scrub the API keys from history using BFG Repo-Cleaner. It takes longer but works."
+        },
+        {
+          "id": "C",
+          "text": "Try to reconstruct the code from memory and old outputs",
+          "outcome": "poor",
+          "points": 25,
+          "feedback": "This takes hours and introduces new bugs. Gina Git sighs—git had the answer all along.",
+          "next_situation": "You eventually recover using reflog anyway, but the deadline is tight. Lesson learned: always check git's built-in recovery first."
+        },
+        {
+          "id": "D",
+          "text": "Panic and restore from the last backup (2 weeks old)",
+          "outcome": "poor",
+          "points": 10,
+          "feedback": "Two weeks of work lost! The team is devastated. Terry Terminal mutters, 'The terminal remembers everything... if you know where to look.'",
+          "next_situation": "The grant deadline is missed. You spend the next week learning git recovery commands—knowledge that would have saved the day."
+        }
+      ],
+      "lesson": "Git's reflog is your safety net. It tracks all HEAD movements for 90 days by default, even after 'destructive' operations. Always check reflog before assuming commits are lost.",
+      "total_points": 100
+    },
+    {
+      "id": 2,
+      "title": "The Dependency Nightmare",
+      "lectures_required": ["03-working-with-apis", "04-python-packaging"],
+      "characters": ["Vinny Virtual", "Paula Pattern", "Morgan MCP"],
+      "narrative": "BioCompute Inc. calls in a panic. Their protein folding simulation worked perfectly on the developer's machine but crashes on every other computer in the lab. The error messages are cryptic: version conflicts, missing modules, import errors.\n\nVinny Virtual adjusts his isolation goggles. 'Let me guess—someone installed packages globally and didn't document the environment?'\n\nPaula Pattern examines the code structure. 'The imports are all over the place. Half of these are version-specific behaviors that changed in recent updates.'\n\nYou have access to the working machine (for now—they're about to reimage it for a new hire).",
+      "decision_point": "How do you capture and reproduce the working environment?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Create a proper pyproject.toml with pinned dependencies using pip freeze from the working machine",
+          "outcome": "optimal",
+          "points": 100,
+          "feedback": "Perfect! You capture the exact versions that work, create a proper package structure, and add a reproducible environment setup. Vinny Virtual beams with pride.",
+          "next_situation": "The team can now set up identical environments anywhere. You also add a CI check to test in a fresh environment."
+        },
+        {
+          "id": "B",
+          "text": "Create a Docker container that captures the entire working environment",
+          "outcome": "good",
+          "points": 80,
+          "feedback": "Docker ensures reproducibility, but it's a heavy solution for this case. The container works, but lab computers struggle with Docker overhead.",
+          "next_situation": "You later create a lighter solution with conda environments for day-to-day use, keeping Docker for deployment."
+        },
+        {
+          "id": "C",
+          "text": "Copy the entire site-packages directory to other machines",
+          "outcome": "poor",
+          "points": 20,
+          "feedback": "This creates more problems than it solves—binary incompatibilities, system-specific paths, and a maintenance nightmare. Vinny Virtual shudders.",
+          "next_situation": "A week later, it breaks again. You finally learn to do it properly with virtual environments."
+        },
+        {
+          "id": "D",
+          "text": "Tell them to reinstall Python and all packages from scratch",
+          "outcome": "poor",
+          "points": 10,
+          "feedback": "Without documentation of the working versions, this is just guesswork. Five reinstallation attempts later, it's still broken.",
+          "next_situation": "You lose the working machine to the reimage. Months of trial and error follow before stability returns."
+        }
+      ],
+      "lesson": "Always capture your environment in version-controlled configuration files (pyproject.toml, requirements.txt, environment.yml). 'Works on my machine' is a symptom of inadequate dependency management.",
+      "total_points": 100
+    },
+    {
+      "id": 3,
+      "title": "The Silent Bug",
+      "lectures_required": ["05-testing-with-ai", "06-code-quality"],
+      "characters": ["Tessa Test", "Deb Debugger", "Claude Coder"],
+      "narrative": "ChemSynth's reaction kinetics model has been producing results for months. But a sharp-eyed researcher notices the predictions are slightly off—not wrong enough to be obviously broken, but consistently 15% optimistic.\n\nTessa Test examines the codebase. 'No tests. Not a single one. The code could be doing anything.'\n\nDeb Debugger starts her investigation. 'The bug's been there for months, silently corrupting results. How many papers used this data?'\n\nClaude Coder offers: 'I can help generate tests, but first we need to identify where the calculation goes wrong. Want me to help create a test strategy?'",
+      "decision_point": "How do you find and fix the silent bug?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Write tests comparing results to known analytical solutions and published benchmarks, then use failing tests to locate the bug",
+          "outcome": "optimal",
+          "points": 100,
+          "feedback": "Test-driven debugging! Your benchmark tests immediately fail, pointing to a unit conversion error in the rate constant calculation. The bug is found in minutes.",
+          "next_situation": "You add a comprehensive test suite. The fix is simple—someone forgot to convert kJ to J. Now it can never silently break again."
+        },
+        {
+          "id": "B",
+          "text": "Add print statements throughout the code to trace the calculations step by step",
+          "outcome": "good",
+          "points": 60,
+          "feedback": "Systematic but slow. After hours of output analysis, you find the unit conversion error. Deb Debugger suggests: 'Tests would have found this faster and stayed useful forever.'",
+          "next_situation": "You fix the bug but still have no tests. Three months later, a similar bug appears elsewhere."
+        },
+        {
+          "id": "C",
+          "text": "Ask Claude to review the entire codebase for potential bugs",
+          "outcome": "good",
+          "points": 50,
+          "feedback": "Claude identifies several potential issues including the unit conversion, but also flags false positives. Without tests, you can't verify which are real bugs.",
+          "next_situation": "You fix the right bug eventually, but the uncertainty about other potential issues lingers without tests to confirm."
+        },
+        {
+          "id": "D",
+          "text": "Rewrite the calculation from scratch based on the equations in the paper",
+          "outcome": "poor",
+          "points": 25,
+          "feedback": "You introduce new bugs while rewriting, and without tests, you can't tell if the new version is better or worse.",
+          "next_situation": "Months of comparison between old and new implementations follow. Tessa Test sighs: 'Tests would have prevented all of this.'"
+        }
+      ],
+      "lesson": "Tests aren't just for finding bugs—they're for preventing regressions and building confidence. When debugging, write a failing test that captures the bug first. The test documents the problem and verifies the fix.",
+      "total_points": 100
+    },
+    {
+      "id": 4,
+      "title": "The Spaghetti Crisis",
+      "lectures_required": ["06-code-quality", "07-python-classes"],
+      "characters": ["Ricky Refactor", "Paula Pattern", "Rita Readable"],
+      "narrative": "QuantumFlow needs to add a new feature to their quantum chemistry package. Problem: the main calculation module is a 3,000-line function with 47 parameters, nested loops eight levels deep, and variable names like `tmp2`, `x_new_new`, and `res_final_v2_fixed`.\n\nRicky Refactor stares at the code, twitching slightly. 'This... this is a crime against programming.'\n\nPaula Pattern analyzes the structure. 'There's actually good logic buried in here, but it's been added to haphazardly for years. We need to extract coherent pieces without breaking existing functionality.'\n\nRita Readable adds: 'And we need to understand what these variables actually represent. `tmp2` could be anything.'",
+      "decision_point": "How do you approach the refactoring?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Add characterization tests first, then refactor in small steps, running tests after each change",
+          "outcome": "optimal",
+          "points": 100,
+          "feedback": "Perfect approach! You capture current behavior with tests, then safely extract methods, rename variables, and restructure. Each step is verified.",
+          "next_situation": "After two weeks of careful refactoring, the code is clean, tested, and the new feature adds easily. Ricky Refactor sheds a tear of joy."
+        },
+        {
+          "id": "B",
+          "text": "Document what each section does first, then gradually extract into separate functions",
+          "outcome": "good",
+          "points": 70,
+          "feedback": "Good systematic approach, but without tests, you introduce subtle bugs during extraction. Some are caught in review, others escape to production.",
+          "next_situation": "The refactoring mostly works, but debugging the new issues costs time. You add tests after the fact."
+        },
+        {
+          "id": "C",
+          "text": "Rewrite the entire module from scratch with a clean design",
+          "outcome": "poor",
+          "points": 30,
+          "feedback": "The 'Second System Effect' strikes. Your clean rewrite misses edge cases the original handled. Users report broken calculations.",
+          "next_situation": "You end up needing to study the original code anyway to understand the edge cases. Should have refactored incrementally."
+        },
+        {
+          "id": "D",
+          "text": "Just add the new feature to the existing code—don't touch what works",
+          "outcome": "poor",
+          "points": 15,
+          "feedback": "You add another nested level, more mysterious variable names. The next person to touch this code (probably you in 6 months) will suffer.",
+          "next_situation": "The technical debt grows. Eventually, the code becomes so fragile that any change causes cascading failures."
+        }
+      ],
+      "lesson": "Refactoring requires safety nets. Add tests before changing anything. Refactor in small, verified steps. Never rewrite from scratch—refactor incrementally while maintaining test coverage.",
+      "total_points": 100
+    },
+    {
+      "id": 5,
+      "title": "The Review Rejection",
+      "lectures_required": ["08-github-collaboration"],
+      "characters": ["Review Rachel", "Oliver Open-Source", "Gina Git"],
+      "narrative": "You've spent a week building a fantastic new feature for an open source molecular dynamics library. You open your first PR to the project, excited to contribute. Then the reviews come in:\n\n'This doesn't follow our coding standards.' 'Missing tests.' 'The commit history is messy.' 'Please rebase on main.' 'This breaks backwards compatibility.'\n\nYour heart sinks. Twenty comments, many requesting major changes.\n\nReview Rachel appears beside you. 'I know this feels harsh, but these reviewers are trying to help. Let's work through this systematically.'\n\nOliver Open-Source adds: 'Your first PR rejection is a rite of passage. How you respond determines whether you become a valued contributor.'",
+      "decision_point": "How do you respond to the review feedback?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Thank the reviewers, address each comment systematically, and ask clarifying questions where needed",
+          "outcome": "optimal",
+          "points": 100,
+          "feedback": "Perfect response! Your professionalism impresses the maintainers. You learn their coding standards, fix the tests, clean up history with interactive rebase.",
+          "next_situation": "The PR merges after two rounds of review. The maintainer invites you to tackle more issues. You've earned trust in the community."
+        },
+        {
+          "id": "B",
+          "text": "Fix the easy issues first, then ask for help on the confusing feedback",
+          "outcome": "good",
+          "points": 75,
+          "feedback": "Good strategy for prioritization. You make progress on most issues, and the maintainers appreciate that you tried before asking.",
+          "next_situation": "The PR takes longer but eventually merges. You've learned the workflow for next time."
+        },
+        {
+          "id": "C",
+          "text": "Argue that some of the requested changes are unnecessary",
+          "outcome": "poor",
+          "points": 30,
+          "feedback": "You might be right on some points, but arguing on a first PR comes across as difficult. The maintainer becomes less responsive.",
+          "next_situation": "The PR sits unmerged for weeks. You eventually make the changes anyway, but the relationship with the project is strained."
+        },
+        {
+          "id": "D",
+          "text": "Close the PR and give up—this is too much work",
+          "outcome": "poor",
+          "points": 10,
+          "feedback": "You miss the learning opportunity. The next PR to another project receives similar feedback. Without learning to respond to reviews, contributing remains frustrating.",
+          "next_situation": "Oliver Open-Source sadly watches you leave. 'They were so close to becoming a real contributor...'"
+        }
+      ],
+      "lesson": "Code review feedback—even harsh feedback—is a gift. Responding professionally, addressing concerns systematically, and asking good clarifying questions builds your reputation as a collaborator.",
+      "total_points": 100
+    },
+    {
+      "id": 6,
+      "title": "The Deployment Disaster",
+      "lectures_required": ["09-github-actions"],
+      "characters": ["Wendy Workflow", "Tessa Test", "Gina Git"],
+      "narrative": "MaterialsDB releases weekly to production. This week's release seems fine—CI passes, tests are green. But minutes after deployment, users report the database is returning wrong results. The application is live, serving bad data to researchers worldwide.\n\nWendy Workflow checks the pipeline. 'CI passed... but wait, the integration tests only run on merge to main, not on the actual deployment.'\n\nTessa Test examines the test suite. 'These tests mock the database. They never actually test against a real database with real data.'\n\nThe clock is ticking. Every minute the bad data is live is another researcher potentially using corrupted results.",
+      "decision_point": "What's your immediate response?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Immediately rollback to the previous version, then investigate the root cause",
+          "outcome": "optimal",
+          "points": 100,
+          "feedback": "Correct priority! User safety first. You trigger the rollback pipeline, and good data is restored in minutes. Then you can investigate without pressure.",
+          "next_situation": "Root cause: a schema migration ran in the wrong order. You add integration tests and staging environment checks to the CI pipeline."
+        },
+        {
+          "id": "B",
+          "text": "Try to fix the bug quickly in production to minimize the rollback disruption",
+          "outcome": "poor",
+          "points": 30,
+          "feedback": "Debugging in production under pressure leads to mistakes. Your 'fix' introduces another bug. The situation gets worse before it gets better.",
+          "next_situation": "After an hour of chaos, you rollback anyway. Should have done it immediately."
+        },
+        {
+          "id": "C",
+          "text": "Take the site offline completely until you understand what happened",
+          "outcome": "good",
+          "points": 60,
+          "feedback": "This stops the bleeding but is more disruptive than a rollback. Users can't access the service at all, even for valid old data.",
+          "next_situation": "You eventually rollback. The extended downtime generates complaints, but at least no more bad data was served."
+        },
+        {
+          "id": "D",
+          "text": "Add a warning banner that data might be incorrect while you investigate",
+          "outcome": "poor",
+          "points": 20,
+          "feedback": "Users miss warnings. Researchers continue using bad data. When the scope of the problem becomes clear, the trust damage is severe.",
+          "next_situation": "Papers are retracted due to data issues. The project's reputation suffers long-term harm."
+        }
+      ],
+      "lesson": "When production breaks, rollback first, investigate second. Have rollback procedures tested and ready. Add integration tests that actually test deployments, and never deploy without a staging environment check.",
+      "total_points": 100
+    },
+    {
+      "id": 7,
+      "title": "The Documentation Debt",
+      "lectures_required": ["10-documentation"],
+      "characters": ["Doc Douglas", "Rita Readable", "Oliver Open-Source"],
+      "narrative": "PySpectro is a powerful spectroscopy analysis library—but nobody can figure out how to use it. The README just says 'See examples/' (the examples folder is empty). Function docstrings are either missing or just repeat the function name.\n\nA researcher emails: 'I've spent 3 days trying to understand the input format for `analyze_spectrum()`. Can someone explain the `mode` parameter?'\n\nDoc Douglas examines the codebase. 'This library has incredible functionality buried under terrible documentation. It's like a treasure chest locked with an invisible key.'\n\nThe library's creator says: 'I know it needs documentation, but I don't have time. Could you help?'",
+      "decision_point": "How do you approach documenting this library?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Start with the most-used function, write a complete tutorial, then expand systematically",
+          "outcome": "optimal",
+          "points": 100,
+          "feedback": "Perfect triage! You identify `analyze_spectrum()` as the most common entry point, write a comprehensive tutorial with examples, then gradually expand.",
+          "next_situation": "Downloads triple within a month. Contributors start adding documentation for other functions, following your template."
+        },
+        {
+          "id": "B",
+          "text": "Generate API documentation automatically from code using Sphinx",
+          "outcome": "good",
+          "points": 60,
+          "feedback": "Auto-generated docs are better than nothing, but without good docstrings, they're mostly empty. You have structure but little content.",
+          "next_situation": "The scaffolding is there, but researchers still struggle. You eventually write the tutorials anyway."
+        },
+        {
+          "id": "C",
+          "text": "Add minimal docstrings to every function to at least have something",
+          "outcome": "poor",
+          "points": 35,
+          "feedback": "'Analyzes the spectrum' as a docstring for `analyze_spectrum()` helps nobody. Rita Readable frowns: 'Documentation should explain what the function does, not repeat its name.'",
+          "next_situation": "You have docs, but they're useless. Users still can't figure out the library."
+        },
+        {
+          "id": "D",
+          "text": "Tell the researcher to read the source code—it's open source after all",
+          "outcome": "poor",
+          "points": 10,
+          "feedback": "Oliver Open-Source sighs. 'Open source doesn't mean 'figure it out yourself.' Good documentation is what makes open source accessible.'",
+          "next_situation": "The researcher gives up and uses a competitor library with better docs. User growth stalls."
+        }
+      ],
+      "lesson": "Documentation is a feature. Start with the user journey—what do people need to know first? Tutorials and examples are often more valuable than exhaustive API references. Good documentation multiplies your code's impact.",
+      "total_points": 100
+    },
+    {
+      "id": 8,
+      "title": "The Forge Master's Challenge",
+      "lectures_required": ["11-advanced-mcp"],
+      "characters": ["Morgan MCP", "Claude Coder", "All Characters"],
+      "narrative": "It's your final challenge at the Software Forge. The Master Craftsperson presents the task: build a tool that helps researchers across all the labs you've helped this semester.\n\n'You've solved individual crises,' the Master says. 'Now create something that prevents them.'\n\nMorgan MCP grins. 'An MCP server that connects your AI assistant to development tools—code analysis, testing, documentation checking, all in one place.'\n\nClaude Coder adds: 'I could help researchers more effectively if I could actually see their code, run their tests, check their environments.'\n\nAll your mentors gather. Gina Git, Tessa Test, Doc Douglas—everyone you've learned from. This is your chance to bring it all together.",
+      "decision_point": "What core capability do you build first for your research assistant MCP server?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A unified tool that checks code quality, runs tests, and identifies documentation gaps",
+          "outcome": "optimal",
+          "points": 150,
+          "feedback": "You've learned well! Your MCP server provides pre-commit checks, test running, and documentation linting—the three pillars of code quality that prevent most crises.",
+          "next_situation": "Labs across campus adopt your tool. The frequency of 'silent bugs' and 'deployment disasters' drops dramatically. You've earned your place among the Master Craftspeople."
+        },
+        {
+          "id": "B",
+          "text": "An environment analyzer that captures and validates dependencies",
+          "outcome": "good",
+          "points": 100,
+          "feedback": "Vinny Virtual approves! Your tool prevents the 'works on my machine' problem by checking environments and flagging dependency issues before they cause crises.",
+          "next_situation": "It's useful but narrow. You expand it later to include other checks. A solid foundation to build on."
+        },
+        {
+          "id": "C",
+          "text": "An AI code reviewer that automatically comments on pull requests",
+          "outcome": "good",
+          "points": 75,
+          "feedback": "Review Rachel appreciates the effort, but notes: 'AI review helps, but it works best when humans are also involved. The tool should support human review, not replace it.'",
+          "next_situation": "The tool finds surface issues but misses deeper design concerns. You refine it to be a first-pass assistant rather than a replacement reviewer."
+        },
+        {
+          "id": "D",
+          "text": "A general-purpose file editor and runner—let AI do everything directly",
+          "outcome": "poor",
+          "points": 40,
+          "feedback": "Claude Coder hesitates: 'I work best as a collaborator, not an autonomous agent. Giving me unlimited file access without safeguards could cause the very crises we're trying to prevent.'",
+          "next_situation": "The tool is powerful but dangerous. After a few accidental deletions, you add safety rails. The final version is more constrained but more trustworthy."
+        }
+      ],
+      "lesson": "The best tools encode best practices. Automation should prevent problems, not just find them after they occur. And AI assistants work best as collaborators with appropriate guardrails, not autonomous agents.",
+      "total_points": 150
+    }
+  ],
+  "scoring": {
+    "total_possible": 850,
+    "rank_thresholds": {
+      "master_craftsperson": 750,
+      "senior_engineer": 600,
+      "engineer": 450,
+      "apprentice": 300
+    }
+  },
+  "completion_message": "Congratulations! You've completed The Software Forge: Crisis Mode. The crises you faced—and the lessons you learned—are the same challenges that professional software engineers face daily. The difference between an apprentice and a master isn't avoiding problems; it's knowing how to solve them systematically and prevent them from recurring."
+}

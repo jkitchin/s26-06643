@@ -1,0 +1,37 @@
+# Table of contents
+format: jb-book
+root: intro
+parts:
+  - caption: Course Information
+    chapters:
+      - file: syllabus
+      - file: setup
+
+  - caption: Lectures
+    chapters:
+      - file: 00-ai-assisted-development/00-ai-assisted-development
+      - file: 01-terminals/01-terminals
+      - file: 02-git-version-control/02-git-version-control
+      - file: 03-working-with-apis/03-working-with-apis
+      - file: 04-python-packaging/04-python-packaging
+      - file: 05-testing-with-ai/05-testing-with-ai
+      - file: 06-code-quality/06-code-quality
+      - file: 07-debugging/07-debugging
+      - file: 08-github-collaboration/08-github-collaboration
+      - file: 09-github-actions/09-github-actions
+      - file: 10-documentation/10-documentation
+      - file: 11-advanced-mcp/11-advanced-mcp
+
+  - caption: Optional Lectures
+    chapters:
+      - file: optional/07-python-classes/07-python-classes
+
+  - caption: Assignments
+    chapters:
+      - file: assignments/index
+        sections:
+          - glob: assignments/a*
+
+  - caption: About
+    chapters:
+      - file: summary

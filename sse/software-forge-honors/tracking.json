@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0",
+  "program": "Software Forge Honors",
+  "description": "Progress tracking for badge and rank achievement",
+
+  "student": {
+    "id": "",
+    "name": "",
+    "github_username": "",
+    "start_date": "",
+    "current_rank": null
+  },
+
+  "badges": {
+    "toolsmith": {
+      "name": "Toolsmith",
+      "icon": "🔧",
+      "lectures": ["00-ai-assisted-development", "01-terminals", "02-git-version-control"],
+      "status": "not_started",
+      "requirements": {
+        "quiz_average": {
+          "required": 75,
+          "current": null,
+          "met": false
+        },
+        "assignments": {
+          "required": ["assignment-00", "assignment-01", "assignment-02"],
+          "completed": [],
+          "met": false
+        },
+        "badge_activity": {
+          "chosen": null,
+          "options": ["git_workflow_demo", "shell_script", "ai_collaboration_log"],
+          "submitted": false,
+          "approved": false
+        }
+      },
+      "earned_date": null
+    },
+    "packager": {
+      "name": "Packager",
+      "icon": "📦",
+      "lectures": ["03-working-with-apis", "04-python-packaging"],
+      "status": "not_started",
+      "requirements": {
+        "quiz_average": {
+          "required": 75,
+          "current": null,
+          "met": false
+        },
+        "assignments": {
+          "required": ["assignment-03", "assignment-04"],
+          "completed": [],
+          "met": false
+        },
+        "badge_activity": {
+          "chosen": null,
+          "options": ["api_integration", "python_package", "mcp_server"],
+          "submitted": false,
+          "approved": false
+        }
+      },
+      "earned_date": null
+    },
+    "tester": {
+      "name": "Tester",
+      "icon": "✅",
+      "lectures": ["05-testing-with-ai", "06-code-quality", "07-python-classes"],
+      "status": "not_started",
+      "requirements": {
+        "quiz_average": {
+          "required": 75,
+          "current": null,
+          "met": false
+        },
+        "assignments": {
+          "required": ["assignment-05", "assignment-06", "assignment-07"],
+          "completed": [],
+          "met": false
+        },
+        "badge_activity": {
+          "chosen": null,
+          "options": ["test_suite", "code_quality_audit", "class_design"],
+          "submitted": false,
+          "approved": false
+        }
+      },
+      "earned_date": null
+    },
+    "collaborator": {
+      "name": "Collaborator",
+      "icon": "🤝",
+      "lectures": ["08-github-collaboration", "09-github-actions"],
+      "status": "not_started",
+      "requirements": {
+        "quiz_average": {
+          "required": 75,
+          "current": null,
+          "met": false
+        },
+        "assignments": {
+          "required": ["assignment-08", "assignment-09"],
+          "completed": [],
+          "met": false
+        },
+        "badge_activity": {
+          "chosen": null,
+          "options": ["open_source_contribution", "cicd_pipeline", "code_review_practice"],
+          "submitted": false,
+          "approved": false
+        }
+      },
+      "earned_date": null
+    },
+    "documenter": {
+      "name": "Documenter",
+      "icon": "📚",
+      "lectures": ["10-documentation", "11-advanced-mcp"],
+      "status": "not_started",
+      "requirements": {
+        "quiz_average": {
+          "required": 75,
+          "current": null,
+          "met": false
+        },
+        "assignments": {
+          "required": ["assignment-10", "assignment-11"],
+          "completed": [],
+          "met": false
+        },
+        "badge_activity": {
+          "chosen": null,
+          "options": ["documentation_site", "advanced_mcp_tool", "tutorial_creation"],
+          "submitted": false,
+          "approved": false
+        }
+      },
+      "earned_date": null
+    }
+  },
+
+  "ranks": {
+    "code_apprentice": {
+      "name": "Code Apprentice",
+      "icon": "🔧",
+      "status": "not_started",
+      "requirements": {
+        "badges_required": 1,
+        "badges_earned": 0,
+        "capstone": {
+          "type": "reflection_essay",
+          "title": "How AI-Assisted Development Changed My Coding Workflow",
+          "submitted": false,
+          "approved": false
+        }
+      },
+      "earned_date": null
+    },
+    "software_crafter": {
+      "name": "Software Crafter",
+      "icon": "📦",
+      "status": "locked",
+      "requirements": {
+        "badges_required": 2,
+        "badges_earned": 0,
+        "midterm": {
+          "required_score": 70,
+          "actual_score": null,
+          "met": false
+        },
+        "capstone": {
+          "type": null,
+          "options": ["code_review_session", "tutorial_presentation"],
+          "submitted": false,
+          "approved": false
+        }
+      },
+      "earned_date": null
+    },
+    "software_engineer": {
+      "name": "Software Engineer",
+      "icon": "✅",
+      "status": "locked",
+      "requirements": {
+        "badges_required": 4,
+        "badges_earned": 0,
+        "quiz_average": {
+          "required": 75,
+          "current": null,
+          "met": false
+        },
+        "field_experience": {
+          "type": null,
+          "options": ["open_source_contribution", "industry_interview", "research_tool", "professional_event"],
+          "submitted": false,
+          "approved": false
+        },
+        "capstone": {
+          "type": "software_project",
+          "submitted": false,
+          "approved": false
+        }
+      },
+      "earned_date": null
+    },
+    "master_craftsperson": {
+      "name": "Master Craftsperson",
+      "icon": "🏆",
+      "status": "locked",
+      "requirements": {
+        "badges_required": 5,
+        "badges_earned": 0,
+        "final_exam": {
+          "required_score": 70,
+          "actual_score": null,
+          "met": false
+        },
+        "project": {
+          "submitted": false,
+          "grade": null,
+          "meets_distinction": false
+        },
+        "capstone": {
+          "type": "portfolio_presentation",
+          "title": "Portfolio Presentation",
+          "submitted": false,
+          "approved": false
+        }
+      },
+      "earned_date": null
+    }
+  },
+
+  "quiz_scores": {
+    "00-ai-assisted-development": null,
+    "01-terminals": null,
+    "02-git-version-control": null,
+    "03-working-with-apis": null,
+    "04-python-packaging": null,
+    "05-testing-with-ai": null,
+    "06-code-quality": null,
+    "07-python-classes": null,
+    "08-github-collaboration": null,
+    "09-github-actions": null,
+    "10-documentation": null,
+    "11-advanced-mcp": null
+  },
+
+  "exam_scores": {
+    "midterm": null,
+    "final": null
+  },
+
+  "github_activity": {
+    "commits": 0,
+    "pull_requests_opened": 0,
+    "pull_requests_merged": 0,
+    "code_reviews_given": 0,
+    "issues_opened": 0
+  },
+
+  "history": []
+}

@@ -1,0 +1,44 @@
+# Course requirements for s26-06643
+# Creating Scientific Software with AI Coding Agents
+
+# Core
+python>=3.10
+jupyter
+notebook
+jupyterlab
+
+# Jupyter Book
+jupyter-book
+sphinx
+
+# HTTP and APIs
+requests
+httpx
+
+# Testing
+pytest
+pytest-cov
+coverage
+
+# Code Quality
+black
+flake8
+pylint
+ruff
+pre-commit
+
+# Documentation
+sphinx
+myst-parser
+sphinx-autodoc-typehints
+
+# Utilities
+rich
+typer
+click
+
+# For OpenAlex examples
+pyalex
+
+# For MCP development
+mcp

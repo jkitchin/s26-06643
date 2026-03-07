@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "course": "Scientific Software Engineering",
+    "version": "1.0",
+    "description": "Interactive puzzles for software engineering concepts"
+  },
+  "puzzle_types": [
+    {
+      "type": "command_match",
+      "name": "Command Match",
+      "description": "Match commands to their purposes"
+    },
+    {
+      "type": "code_completion",
+      "name": "Code Completion",
+      "description": "Fill in missing code"
+    },
+    {
+      "type": "git_graph",
+      "name": "Git Graph Detective",
+      "description": "Analyze git history and determine what happened"
+    },
+    {
+      "type": "bug_hunt",
+      "name": "Bug Hunt",
+      "description": "Find the bug in the code snippet"
+    },
+    {
+      "type": "workflow_order",
+      "name": "Workflow Order",
+      "description": "Put steps in the correct order"
+    }
+  ],
+  "puzzles": [
+    {
+      "id": "cmd-match-01",
+      "type": "command_match",
+      "difficulty": "easy",
+      "lectures": ["01-terminals"],
+      "instruction": "Match each terminal command to its purpose:",
+      "items": [
+        {"command": "ls -la", "purpose": "List all files including hidden, with details"},
+        {"command": "cd ..", "purpose": "Go up one directory level"},
+        {"command": "cat file.txt", "purpose": "Display contents of a file"},
+        {"command": "mkdir new_dir", "purpose": "Create a new directory"}
+      ],
+      "points": 20
+    },
+    {
+      "id": "cmd-match-02",
+      "type": "command_match",
+      "difficulty": "medium",
+      "lectures": ["02-git-version-control"],
+      "instruction": "Match each git command to its purpose:",
+      "items": [
+        {"command": "git reflog", "purpose": "Show all HEAD movements for recovery"},
+        {"command": "git stash", "purpose": "Temporarily save uncommitted changes"},
+        {"command": "git revert <hash>", "purpose": "Create a new commit that undoes a previous one"},
+        {"command": "git cherry-pick <hash>", "purpose": "Apply a specific commit to current branch"}
+      ],
+      "points": 25
+    },
+    {
+      "id": "code-complete-01",
+      "type": "code_completion",
+      "difficulty": "easy",
+      "lectures": ["02-git-version-control"],
+      "instruction": "Complete the git workflow to commit changes:",
+      "code_template": "# Check what files have changed\ngit ______\n\n# Stage all changes\ngit ______ .\n\n# Commit with a message\ngit ______ -m \"Add new feature\"",
+      "blanks": ["status", "add", "commit"],
+      "hint": "The three basic steps: see changes, stage them, commit them",
+      "points": 15
+    },
+    {
+      "id": "code-complete-02",
+      "type": "code_completion",
+      "difficulty": "medium",
+      "lectures": ["05-testing-with-ai"],
+      "instruction": "Complete the pytest test function:",
+      "code_template": "import ______\n\ndef test_addition():\n    result = add(2, 3)\n    ______ result == 5\n\ndef test_division_by_zero():\n    with pytest._______(ZeroDivisionError):\n        divide(1, 0)",
+      "blanks": ["pytest", "assert", "raises"],
+      "hint": "Import, assertion, and testing for exceptions",
+      "points": 25
+    },
+    {
+      "id": "code-complete-03",
+      "type": "code_completion",
+      "difficulty": "medium",
+      "lectures": ["07-python-classes"],
+      "instruction": "Complete the Python class definition:",
+      "code_template": "class Molecule:\n    def ______(self, name, formula):\n        self.name = name\n        self.formula = formula\n    \n    def __str__(______):\n        return f\"{self.name}: {self.formula}\"\n    \n    @______\n    def from_smiles(cls, smiles):\n        # Create molecule from SMILES string\n        return cls(smiles, smiles)",
+      "blanks": ["__init__", "self", "classmethod"],
+      "hint": "Constructor, self reference, and class method decorator",
+      "points": 30
+    },
+    {
+      "id": "code-complete-04",
+      "type": "code_completion",
+      "difficulty": "hard",
+      "lectures": ["09-github-actions"],
+      "instruction": "Complete the GitHub Actions workflow:",
+      "code_template": "name: Tests\non: [push, pull_request]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - ______: actions/checkout@v4\n      - name: Set up Python\n        uses: actions/setup-______@v5\n        with:\n          python-version: '3.11'\n      - name: Install dependencies\n        ______: pip install -r requirements.txt\n      - name: Run tests\n        run: pytest",
+      "blanks": ["uses", "python", "run"],
+      "hint": "Action reference, setup action name, and command execution",
+      "points": 30
+    },
+    {
+      "id": "git-graph-01",
+      "type": "git_graph",
+      "difficulty": "medium",
+      "lectures": ["02-git-version-control"],
+      "instruction": "Given this git log output, what happened?",
+      "scenario": "git log --oneline --graph:\n* abc1234 Merge branch 'feature' into main\n|\\\n| * def5678 Add new analysis function\n| * ghi9012 Implement data loading\n* | jkl3456 Fix typo in README\n|/\n* mno7890 Initial commit",
+      "question": "How many commits are on the 'feature' branch that aren't on main (before the merge)?",
+      "answer": 2,
+      "explanation": "The feature branch has 2 commits (def5678 and ghi9012) that were merged into main. The commit jkl3456 was made on main while feature was being developed.",
+      "points": 25
+    },
+    {
+      "id": "git-graph-02",
+      "type": "git_graph",
+      "difficulty": "hard",
+      "lectures": ["02-git-version-control"],
+      "instruction": "A developer ran these commands. What's the final state?",
+      "scenario": "git checkout main\ngit checkout -b feature\n# make changes\ngit add .\ngit commit -m \"Add feature\"\ngit checkout main\ngit pull origin main\ngit checkout feature\ngit rebase main\ngit checkout main\ngit merge feature",
+      "question": "After these commands, will main have a merge commit or linear history?",
+      "options": ["Merge commit", "Linear history", "Conflict state", "Detached HEAD"],
+      "correct": 1,
+      "explanation": "Because they rebased feature onto main before merging, the merge becomes a fast-forward merge, resulting in linear history without a merge commit.",
+      "points": 35
+    },
+    {
+      "id": "bug-hunt-01",
+      "type": "bug_hunt",
+      "difficulty": "easy",
+      "lectures": ["05-testing-with-ai"],
+      "instruction": "Find the bug in this test:",
+      "code": "def test_calculation():\n    result = calculate_energy(10, 20)\n    assert result = 200",
+      "bug": "Single = instead of == in assertion",
+      "correct_code": "assert result == 200",
+      "explanation": "A single = is assignment, not comparison. This would be a syntax error. Use == for assertions.",
+      "points": 15
+    },
+    {
+      "id": "bug-hunt-02",
+      "type": "bug_hunt",
+      "difficulty": "medium",
+      "lectures": ["07-python-classes"],
+      "instruction": "Find the bug in this class:",
+      "code": "class Reactor:\n    volume = 100  # Default volume\n    \n    def __init__(self, name):\n        self.name = name\n    \n    def fill(self, amount):\n        self.volume += amount\n\nr1 = Reactor(\"R1\")\nr2 = Reactor(\"R2\")\nr1.fill(50)",
+      "bug": "volume is a class attribute, not instance attribute",
+      "explanation": "volume is defined at class level, so r1.fill() might unexpectedly affect the class attribute instead of creating an instance attribute. Should initialize self.volume in __init__.",
+      "points": 25
+    },
+    {
+      "id": "bug-hunt-03",
+      "type": "bug_hunt",
+      "difficulty": "hard",
+      "lectures": ["05-testing-with-ai", "06-code-quality"],
+      "instruction": "Find the subtle bug that tests might miss:",
+      "code": "def parse_concentration(value_str):\n    \"\"\"Parse concentration like '5.0 mM' or '100 uM'\"\"\"\n    parts = value_str.split()\n    value = float(parts[0])\n    unit = parts[1]\n    \n    if unit == 'mM':\n        return value * 1e-3\n    if unit == 'uM':\n        return value * 1e-6\n    return value",
+      "bug": "No error handling for malformed input; silently returns wrong value if unit isn't recognized",
+      "explanation": "If unit is unrecognized (e.g., 'nM'), it returns the raw value without conversion—a silent bug. Should raise an error for unknown units.",
+      "points": 35
+    },
+    {
+      "id": "workflow-order-01",
+      "type": "workflow_order",
+      "difficulty": "easy",
+      "lectures": ["02-git-version-control", "08-github-collaboration"],
+      "instruction": "Put these steps in the correct order for contributing to a project:",
+      "items": [
+        "Create a new branch",
+        "Fork the repository",
+        "Open a pull request",
+        "Clone your fork",
+        "Make and commit changes"
+      ],
+      "correct_order": [1, 3, 0, 4, 2],
+      "explanation": "Fork → Clone → Branch → Commit → PR is the standard open source contribution workflow.",
+      "points": 20
+    },
+    {
+      "id": "workflow-order-02",
+      "type": "workflow_order",
+      "difficulty": "medium",
+      "lectures": ["04-python-packaging"],
+      "instruction": "Put these steps in order to create a Python package:",
+      "items": [
+        "Create pyproject.toml with metadata",
+        "Create __init__.py in package directory",
+        "Run pip install -e . to test locally",
+        "Create the package directory structure",
+        "Build with python -m build"
+      ],
+      "correct_order": [3, 1, 0, 2, 4],
+      "explanation": "Directory structure → __init__.py → pyproject.toml → local install → build",
+      "points": 25
+    },
+    {
+      "id": "workflow-order-03",
+      "type": "workflow_order",
+      "difficulty": "medium",
+      "lectures": ["06-code-quality"],
+      "instruction": "What's the ideal order for improving code quality?",
+      "items": [
+        "Run tests to verify nothing broke",
+        "Run formatter (black) to fix style",
+        "Review changes before committing",
+        "Run linter (ruff) to find issues",
+        "Fix linter errors"
+      ],
+      "correct_order": [1, 3, 4, 0, 2],
+      "explanation": "Format first (automatic fixes) → Lint (find issues) → Fix issues → Test → Review",
+      "points": 25
+    },
+    {
+      "id": "http-match-01",
+      "type": "command_match",
+      "difficulty": "medium",
+      "lectures": ["03-working-with-apis"],
+      "instruction": "Match HTTP status codes to their meanings:",
+      "items": [
+        {"code": "200 OK", "meaning": "Request succeeded"},
+        {"code": "401 Unauthorized", "meaning": "Authentication required"},
+        {"code": "404 Not Found", "meaning": "Resource doesn't exist"},
+        {"code": "500 Internal Server Error", "meaning": "Server-side error"}
+      ],
+      "points": 20
+    },
+    {
+      "id": "config-debug-01",
+      "type": "bug_hunt",
+      "difficulty": "hard",
+      "lectures": ["09-github-actions"],
+      "instruction": "Find the error in this GitHub Actions workflow:",
+      "code": "name: CI\non: [push]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: 3.11\n      - run: pip install pytest\n      - run: pytest tests/\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo \"Deploying...\"",
+      "bug": "Deploy job runs in parallel with test, not after it. Missing 'needs: test'",
+      "explanation": "Jobs run in parallel by default. To make deploy wait for test to pass, add 'needs: test' to the deploy job.",
+      "points": 30
+    }
+  ]
+}

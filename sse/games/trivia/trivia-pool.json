@@ -1,0 +1,516 @@
+{
+  "metadata": {
+    "course": "Scientific Software Engineering",
+    "version": "1.0",
+    "total_questions": 60,
+    "description": "Trivia questions organized by lecture, featuring course characters"
+  },
+  "config": {
+    "default_questions_per_round": 5,
+    "time_limit_seconds": 30,
+    "points_per_correct": 10,
+    "bonus_for_streak": 5
+  },
+  "questions": [
+    {
+      "id": "ai-01",
+      "lecture": "00-ai-assisted-development",
+      "difficulty": "easy",
+      "character": "Claude Coder",
+      "question": "What's the most effective way to ask an AI assistant for help with code?",
+      "options": ["Just say 'fix this'", "Provide context, code, and specific problem description", "Copy-paste entire files without explanation", "Ask vague questions"],
+      "correct": 1,
+      "explanation": "Claude Coder says: Specific prompts with context get specific, useful answers!"
+    },
+    {
+      "id": "ai-02",
+      "lecture": "00-ai-assisted-development",
+      "difficulty": "medium",
+      "character": "Claude Coder",
+      "question": "When should you NOT blindly accept AI-generated code?",
+      "options": ["Only for complex algorithms", "Only for security-critical code", "Always verify AI output", "AI code is always correct"],
+      "correct": 2,
+      "explanation": "Always verify AI-generated code. AI can make mistakes, misunderstand context, or produce plausible but incorrect solutions."
+    },
+    {
+      "id": "terminal-01",
+      "lecture": "01-terminals",
+      "difficulty": "easy",
+      "character": "Terry Terminal",
+      "question": "What command lists files in the current directory?",
+      "options": ["dir", "ls", "list", "show"],
+      "correct": 1,
+      "explanation": "Terry Terminal says: 'ls' is your most frequent companion. Learn its flags!"
+    },
+    {
+      "id": "terminal-02",
+      "lecture": "01-terminals",
+      "difficulty": "easy",
+      "character": "Terry Terminal",
+      "question": "What does 'cd' stand for?",
+      "options": ["Create directory", "Change directory", "Copy data", "Clear display"],
+      "correct": 1,
+      "explanation": "cd = change directory. Use it to navigate the filesystem."
+    },
+    {
+      "id": "terminal-03",
+      "lecture": "01-terminals",
+      "difficulty": "medium",
+      "character": "Terry Terminal",
+      "question": "What does the pipe operator '|' do?",
+      "options": ["Creates a new file", "Sends output of one command as input to another", "Deletes files", "Runs commands in parallel"],
+      "correct": 1,
+      "explanation": "The pipe chains commands together. Example: 'cat file.txt | grep error' searches for 'error' in the file."
+    },
+    {
+      "id": "terminal-04",
+      "lecture": "01-terminals",
+      "difficulty": "medium",
+      "character": "Terry Terminal",
+      "question": "What does 'chmod +x script.sh' do?",
+      "options": ["Deletes the script", "Makes the script executable", "Compiles the script", "Creates a backup"],
+      "correct": 1,
+      "explanation": "chmod +x adds execute permission, allowing you to run the script directly."
+    },
+    {
+      "id": "git-01",
+      "lecture": "02-git-version-control",
+      "difficulty": "easy",
+      "character": "Gina Git",
+      "question": "What command stages changes for commit?",
+      "options": ["git commit", "git add", "git push", "git stage"],
+      "correct": 1,
+      "explanation": "Gina Git says: 'git add' stages changes. Then 'git commit' saves them."
+    },
+    {
+      "id": "git-02",
+      "lecture": "02-git-version-control",
+      "difficulty": "easy",
+      "character": "Gina Git",
+      "question": "What command shows the current status of your repository?",
+      "options": ["git log", "git status", "git show", "git info"],
+      "correct": 1,
+      "explanation": "git status is your go-to command to see what's staged, modified, and untracked."
+    },
+    {
+      "id": "git-03",
+      "lecture": "02-git-version-control",
+      "difficulty": "medium",
+      "character": "Gina Git",
+      "question": "What does 'git reflog' show?",
+      "options": ["Remote repository logs", "All HEAD movements including 'lost' commits", "File change history", "Branch creation dates"],
+      "correct": 1,
+      "explanation": "reflog is your safety net—it tracks all HEAD movements, even after 'destructive' operations like reset or rebase."
+    },
+    {
+      "id": "git-04",
+      "lecture": "02-git-version-control",
+      "difficulty": "hard",
+      "character": "Gina Git",
+      "question": "What's the difference between 'git merge' and 'git rebase'?",
+      "options": ["They're identical", "Merge creates a merge commit; rebase replays commits on top of another branch", "Rebase deletes commits", "Merge only works on remote branches"],
+      "correct": 1,
+      "explanation": "Merge preserves history with a merge commit. Rebase creates a linear history by replaying commits."
+    },
+    {
+      "id": "git-05",
+      "lecture": "02-git-version-control",
+      "difficulty": "medium",
+      "character": "Gina Git",
+      "question": "A good commit message should:",
+      "options": ["Be as short as possible", "Explain WHAT changed and WHY", "Only contain the file names", "Be written in all caps"],
+      "correct": 1,
+      "explanation": "Good commit messages explain the purpose of the change, not just what files changed."
+    },
+    {
+      "id": "api-01",
+      "lecture": "03-working-with-apis",
+      "difficulty": "easy",
+      "character": "Morgan MCP",
+      "question": "What does API stand for?",
+      "options": ["Advanced Programming Interface", "Application Programming Interface", "Automated Program Integration", "Application Process Integration"],
+      "correct": 1,
+      "explanation": "API = Application Programming Interface. It's how software components communicate."
+    },
+    {
+      "id": "api-02",
+      "lecture": "03-working-with-apis",
+      "difficulty": "medium",
+      "character": "Morgan MCP",
+      "question": "What HTTP method is typically used to retrieve data?",
+      "options": ["POST", "GET", "PUT", "DELETE"],
+      "correct": 1,
+      "explanation": "GET retrieves data. POST creates, PUT updates, DELETE removes."
+    },
+    {
+      "id": "api-03",
+      "lecture": "03-working-with-apis",
+      "difficulty": "medium",
+      "character": "Morgan MCP",
+      "question": "What does a 404 status code mean?",
+      "options": ["Success", "Server error", "Resource not found", "Unauthorized"],
+      "correct": 2,
+      "explanation": "404 = Not Found. The requested resource doesn't exist at that URL."
+    },
+    {
+      "id": "api-04",
+      "lecture": "03-working-with-apis",
+      "difficulty": "hard",
+      "character": "Morgan MCP",
+      "question": "What is rate limiting in APIs?",
+      "options": ["Speed of data transfer", "Restricting number of requests in a time period", "Limiting response size", "Caching responses"],
+      "correct": 1,
+      "explanation": "Rate limiting prevents abuse by limiting how many requests a client can make per time period."
+    },
+    {
+      "id": "pkg-01",
+      "lecture": "04-python-packaging",
+      "difficulty": "easy",
+      "character": "Vinny Virtual",
+      "question": "What command creates a virtual environment in Python?",
+      "options": ["python -m pip install venv", "python -m venv env_name", "pip create env", "virtualenv --create"],
+      "correct": 1,
+      "explanation": "Vinny Virtual approves: 'python -m venv env_name' creates an isolated environment."
+    },
+    {
+      "id": "pkg-02",
+      "lecture": "04-python-packaging",
+      "difficulty": "easy",
+      "character": "Vinny Virtual",
+      "question": "Why use virtual environments?",
+      "options": ["They make code run faster", "They isolate project dependencies", "They're required by Python", "They backup your code"],
+      "correct": 1,
+      "explanation": "Virtual environments prevent dependency conflicts between projects."
+    },
+    {
+      "id": "pkg-03",
+      "lecture": "04-python-packaging",
+      "difficulty": "medium",
+      "character": "Vinny Virtual",
+      "question": "What file defines a modern Python package's metadata and dependencies?",
+      "options": ["setup.py only", "requirements.txt only", "pyproject.toml", "package.json"],
+      "correct": 2,
+      "explanation": "pyproject.toml is the modern standard for Python packaging configuration."
+    },
+    {
+      "id": "pkg-04",
+      "lecture": "04-python-packaging",
+      "difficulty": "hard",
+      "character": "Vinny Virtual",
+      "question": "What's the purpose of 'pip freeze > requirements.txt'?",
+      "options": ["Freeze packages to prevent updates", "Export installed packages with versions", "Lock the Python version", "Create a backup"],
+      "correct": 1,
+      "explanation": "pip freeze captures exact versions of all installed packages for reproducibility."
+    },
+    {
+      "id": "test-01",
+      "lecture": "05-testing-with-ai",
+      "difficulty": "easy",
+      "character": "Tessa Test",
+      "question": "What testing framework is most common in Python?",
+      "options": ["unittest only", "pytest", "jest", "mocha"],
+      "correct": 1,
+      "explanation": "Tessa Test says: pytest is the modern standard—powerful, simple, and extensible."
+    },
+    {
+      "id": "test-02",
+      "lecture": "05-testing-with-ai",
+      "difficulty": "medium",
+      "character": "Tessa Test",
+      "question": "What is a 'fixture' in pytest?",
+      "options": ["A broken test", "A reusable setup function that provides test data", "A type of assertion", "A test report"],
+      "correct": 1,
+      "explanation": "Fixtures provide reusable setup code for tests—database connections, test data, etc."
+    },
+    {
+      "id": "test-03",
+      "lecture": "05-testing-with-ai",
+      "difficulty": "medium",
+      "character": "Tessa Test",
+      "question": "What does 'code coverage' measure?",
+      "options": ["How fast tests run", "What percentage of code is executed by tests", "Number of tests", "Lines of code changed"],
+      "correct": 1,
+      "explanation": "Coverage shows what code paths your tests exercise. High coverage doesn't guarantee bug-free code, but low coverage reveals untested areas."
+    },
+    {
+      "id": "test-04",
+      "lecture": "05-testing-with-ai",
+      "difficulty": "hard",
+      "character": "Tessa Test",
+      "question": "What is Test-Driven Development (TDD)?",
+      "options": ["Testing after development", "Writing tests before implementing the code", "Only testing critical code", "Automated test generation"],
+      "correct": 1,
+      "explanation": "TDD: Write a failing test first, then write code to make it pass. It clarifies requirements and ensures testability."
+    },
+    {
+      "id": "quality-01",
+      "lecture": "06-code-quality",
+      "difficulty": "easy",
+      "character": "Rita Readable",
+      "question": "What does a linter do?",
+      "options": ["Compiles code", "Checks code for style and potential errors", "Formats code automatically", "Runs tests"],
+      "correct": 1,
+      "explanation": "Linters (like ruff, flake8) check for style violations and potential bugs without running the code."
+    },
+    {
+      "id": "quality-02",
+      "lecture": "06-code-quality",
+      "difficulty": "easy",
+      "character": "Rita Readable",
+      "question": "What does Black do?",
+      "options": ["Delete files", "Auto-format Python code consistently", "Check for bugs", "Run tests"],
+      "correct": 1,
+      "explanation": "Black is an opinionated code formatter—it automatically makes your code consistent."
+    },
+    {
+      "id": "quality-03",
+      "lecture": "06-code-quality",
+      "difficulty": "medium",
+      "character": "Ricky Refactor",
+      "question": "What does DRY stand for?",
+      "options": ["Don't Repeat Yourself", "Do Reuse Yourself", "Delete Redundant YAML", "Don't Run Yesterday"],
+      "correct": 0,
+      "explanation": "DRY: Don't Repeat Yourself. Duplicated code is a maintenance nightmare."
+    },
+    {
+      "id": "quality-04",
+      "lecture": "06-code-quality",
+      "difficulty": "hard",
+      "character": "Ricky Refactor",
+      "question": "When is the right time to refactor?",
+      "options": ["Never—if it works, don't touch it", "After you have tests to verify behavior", "Before writing any tests", "Only when rewriting from scratch"],
+      "correct": 1,
+      "explanation": "Ricky Refactor: Always have tests first. Refactor in small steps, verifying after each change."
+    },
+    {
+      "id": "class-01",
+      "lecture": "07-python-classes",
+      "difficulty": "easy",
+      "character": "Paula Pattern",
+      "question": "What is __init__ in a Python class?",
+      "options": ["A destructor", "The constructor that initializes new objects", "A static method", "A class variable"],
+      "correct": 1,
+      "explanation": "__init__ is called when creating a new instance, used to initialize attributes."
+    },
+    {
+      "id": "class-02",
+      "lecture": "07-python-classes",
+      "difficulty": "medium",
+      "character": "Paula Pattern",
+      "question": "What's the difference between a class and an instance?",
+      "options": ["They're the same thing", "A class is a blueprint; an instance is a specific object created from it", "Instances define classes", "Classes can't have methods"],
+      "correct": 1,
+      "explanation": "Class = blueprint/template. Instance = actual object created from that blueprint."
+    },
+    {
+      "id": "class-03",
+      "lecture": "07-python-classes",
+      "difficulty": "medium",
+      "character": "Paula Pattern",
+      "question": "What does 'self' refer to in a Python method?",
+      "options": ["The class itself", "The current instance of the class", "A global variable", "The parent class"],
+      "correct": 1,
+      "explanation": "self refers to the specific instance the method is being called on."
+    },
+    {
+      "id": "class-04",
+      "lecture": "07-python-classes",
+      "difficulty": "hard",
+      "character": "Paula Pattern",
+      "question": "When should you prefer composition over inheritance?",
+      "options": ["Never—inheritance is always better", "When you need 'has-a' rather than 'is-a' relationships", "Only in functional programming", "Inheritance is obsolete"],
+      "correct": 1,
+      "explanation": "Composition ('has-a') is often more flexible than inheritance ('is-a'). A Car 'has-a' Engine is better than Car 'is-a' Engine."
+    },
+    {
+      "id": "collab-01",
+      "lecture": "08-github-collaboration",
+      "difficulty": "easy",
+      "character": "Review Rachel",
+      "question": "What is a Pull Request (PR)?",
+      "options": ["A request to download code", "A proposal to merge changes from one branch to another", "A bug report", "A feature request"],
+      "correct": 1,
+      "explanation": "PRs let you propose changes and get code review before merging to the main branch."
+    },
+    {
+      "id": "collab-02",
+      "lecture": "08-github-collaboration",
+      "difficulty": "medium",
+      "character": "Review Rachel",
+      "question": "What makes a good code review comment?",
+      "options": ["Just 'LGTM' (looks good to me)", "Specific, constructive feedback with suggestions", "Criticism without solutions", "Approval without reading"],
+      "correct": 1,
+      "explanation": "Review Rachel says: Be specific, explain why, and suggest alternatives when pointing out issues."
+    },
+    {
+      "id": "collab-03",
+      "lecture": "08-github-collaboration",
+      "difficulty": "medium",
+      "character": "Oliver Open-Source",
+      "question": "What's the best way to start contributing to open source?",
+      "options": ["Immediately submit large feature PRs", "Start with documentation, typo fixes, or 'good first issue' labels", "Fork and never contribute back", "Only contribute code, never docs"],
+      "correct": 1,
+      "explanation": "Oliver Open-Source: Start small! Documentation improvements count. Look for 'good first issue' labels."
+    },
+    {
+      "id": "collab-04",
+      "lecture": "08-github-collaboration",
+      "difficulty": "hard",
+      "character": "Review Rachel",
+      "question": "How should you respond to tough code review feedback?",
+      "options": ["Argue every point", "Thank reviewers and address comments systematically", "Ignore and close the PR", "Complain about unfair treatment"],
+      "correct": 1,
+      "explanation": "Professionalism matters. Address feedback thoughtfully, ask clarifying questions, and thank reviewers for their time."
+    },
+    {
+      "id": "actions-01",
+      "lecture": "09-github-actions",
+      "difficulty": "easy",
+      "character": "Wendy Workflow",
+      "question": "What is CI/CD?",
+      "options": ["Code Integration/Code Deployment", "Continuous Integration/Continuous Deployment", "Computer Interface/Computer Display", "Central Intelligence/Central Database"],
+      "correct": 1,
+      "explanation": "CI/CD automates testing (Continuous Integration) and deployment (Continuous Deployment)."
+    },
+    {
+      "id": "actions-02",
+      "lecture": "09-github-actions",
+      "difficulty": "medium",
+      "character": "Wendy Workflow",
+      "question": "What triggers a GitHub Action workflow?",
+      "options": ["Only manual triggers", "Events like push, pull_request, schedule, or manual dispatch", "Only when tests fail", "Random intervals"],
+      "correct": 1,
+      "explanation": "Workflows trigger on events: pushes, PRs, schedules, releases, or manual triggers."
+    },
+    {
+      "id": "actions-03",
+      "lecture": "09-github-actions",
+      "difficulty": "medium",
+      "character": "Wendy Workflow",
+      "question": "What is a GitHub Actions 'job'?",
+      "options": ["A single command", "A set of steps that run on the same runner", "A workflow file", "A branch name"],
+      "correct": 1,
+      "explanation": "A job is a collection of steps that run sequentially on a single runner (virtual machine)."
+    },
+    {
+      "id": "actions-04",
+      "lecture": "09-github-actions",
+      "difficulty": "hard",
+      "character": "Wendy Workflow",
+      "question": "What's the benefit of running tests in CI rather than just locally?",
+      "options": ["CI tests are faster", "CI ensures tests pass in a clean, reproducible environment", "Local tests are unreliable", "CI is cheaper"],
+      "correct": 1,
+      "explanation": "CI runs in a fresh environment every time, catching 'works on my machine' issues."
+    },
+    {
+      "id": "docs-01",
+      "lecture": "10-documentation",
+      "difficulty": "easy",
+      "character": "Doc Douglas",
+      "question": "What is a docstring in Python?",
+      "options": ["A comment starting with #", "A string literal at the start of a function/class/module that documents it", "A type annotation", "An import statement"],
+      "correct": 1,
+      "explanation": "Docstrings are string literals in triple quotes that document functions, classes, and modules."
+    },
+    {
+      "id": "docs-02",
+      "lecture": "10-documentation",
+      "difficulty": "medium",
+      "character": "Doc Douglas",
+      "question": "What's the purpose of type hints in Python?",
+      "options": ["Make code run faster", "Document expected types and enable static analysis", "Required for Python to run", "Replace docstrings"],
+      "correct": 1,
+      "explanation": "Type hints document expectations and enable tools like mypy to catch type errors before runtime."
+    },
+    {
+      "id": "docs-03",
+      "lecture": "10-documentation",
+      "difficulty": "medium",
+      "character": "Doc Douglas",
+      "question": "What tool generates documentation from Python docstrings?",
+      "options": ["pytest", "Sphinx", "Black", "git"],
+      "correct": 1,
+      "explanation": "Sphinx reads docstrings and generates beautiful documentation websites."
+    },
+    {
+      "id": "docs-04",
+      "lecture": "10-documentation",
+      "difficulty": "hard",
+      "character": "Doc Douglas",
+      "question": "What should a good README include?",
+      "options": ["Just the license", "Project description, installation instructions, usage examples, and how to contribute", "Only API documentation", "Nothing—code should be self-documenting"],
+      "correct": 1,
+      "explanation": "README is often the first thing users see. Make it welcoming and informative!"
+    },
+    {
+      "id": "mcp-01",
+      "lecture": "11-advanced-mcp",
+      "difficulty": "medium",
+      "character": "Morgan MCP",
+      "question": "What does MCP stand for in the context of AI tools?",
+      "options": ["Main Control Program", "Model Context Protocol", "Multi-Channel Processing", "Machine Code Parser"],
+      "correct": 1,
+      "explanation": "MCP = Model Context Protocol. It lets AI assistants connect to external tools and data sources."
+    },
+    {
+      "id": "mcp-02",
+      "lecture": "11-advanced-mcp",
+      "difficulty": "medium",
+      "character": "Morgan MCP",
+      "question": "What can an MCP server provide to an AI assistant?",
+      "options": ["Only text data", "Tools, resources, and prompts", "Graphics and animations", "CPU processing power"],
+      "correct": 1,
+      "explanation": "MCP servers expose tools (actions), resources (data), and prompts (templates) to AI assistants."
+    },
+    {
+      "id": "mcp-03",
+      "lecture": "11-advanced-mcp",
+      "difficulty": "hard",
+      "character": "Morgan MCP",
+      "question": "Why is MCP useful for scientific computing?",
+      "options": ["It makes code run faster", "It lets AI assistants interact with scientific tools, databases, and simulations", "It replaces Python", "It's only for web development"],
+      "correct": 1,
+      "explanation": "MCP bridges AI assistants with domain-specific tools—databases, simulators, analysis packages—making AI more useful for researchers."
+    },
+    {
+      "id": "general-01",
+      "lecture": "general",
+      "difficulty": "medium",
+      "character": "Deb Debugger",
+      "question": "What's the first thing you should do when debugging?",
+      "options": ["Start changing code randomly", "Read and understand the error message", "Rewrite the function", "Ask someone else to fix it"],
+      "correct": 1,
+      "explanation": "Deb Debugger: Read the error message carefully. It usually tells you exactly what's wrong and where."
+    },
+    {
+      "id": "general-02",
+      "lecture": "general",
+      "difficulty": "medium",
+      "character": "Percy Performance",
+      "question": "When should you optimize code?",
+      "options": ["Always write optimized code first", "After profiling shows it's actually slow", "Never—modern computers are fast enough", "Only for loops"],
+      "correct": 1,
+      "explanation": "Percy Performance: Profile first! Don't guess what's slow. Premature optimization wastes time on code that doesn't matter."
+    },
+    {
+      "id": "general-03",
+      "lecture": "general",
+      "difficulty": "easy",
+      "character": "Practice Pixel",
+      "question": "What's the best way to learn programming concepts?",
+      "options": ["Only read books", "Only watch videos", "Practice by writing code", "Memorize syntax"],
+      "correct": 2,
+      "explanation": "Practice Pixel says: Don't just read it—code it! Hands-on practice is how learning sticks."
+    },
+    {
+      "id": "general-04",
+      "lecture": "general",
+      "difficulty": "medium",
+      "character": "Query Quinn",
+      "question": "Why is asking 'why' important in software development?",
+      "options": ["It's not important", "It helps you understand the underlying principles, not just the syntax", "It annoys senior developers", "It slows down development"],
+      "correct": 1,
+      "explanation": "Query Quinn: Understanding 'why' helps you apply knowledge to new situations. If you can't explain why it works, you don't really understand it."
+    }
+  ]
+}

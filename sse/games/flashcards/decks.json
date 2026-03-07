@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "course": "Scientific Software Engineering",
+    "version": "1.0",
+    "description": "Spaced repetition flashcards for software engineering concepts"
+  },
+  "config": {
+    "algorithm": "SM-2",
+    "default_ease": 2.5,
+    "minimum_ease": 1.3,
+    "intervals": {
+      "again": 1,
+      "hard": 3,
+      "good": 5,
+      "easy": 7
+    }
+  },
+  "decks": [
+    {
+      "id": "terminal-basics",
+      "name": "Terminal Essentials",
+      "lecture": "01-terminals",
+      "cards": [
+        {"front": "ls", "back": "List files and directories in current location"},
+        {"front": "cd <path>", "back": "Change directory to specified path"},
+        {"front": "pwd", "back": "Print working directory (show current location)"},
+        {"front": "mkdir <name>", "back": "Create a new directory"},
+        {"front": "rm <file>", "back": "Remove/delete a file (use -r for directories)"},
+        {"front": "cp <src> <dst>", "back": "Copy file or directory"},
+        {"front": "mv <src> <dst>", "back": "Move or rename file/directory"},
+        {"front": "cat <file>", "back": "Display file contents"},
+        {"front": "| (pipe)", "back": "Send output of one command as input to another"},
+        {"front": "> (redirect)", "back": "Redirect output to a file (overwrites)"},
+        {"front": ">> (append)", "back": "Append output to a file"},
+        {"front": "chmod +x <file>", "back": "Make a file executable"}
+      ]
+    },
+    {
+      "id": "git-basics",
+      "name": "Git Fundamentals",
+      "lecture": "02-git-version-control",
+      "cards": [
+        {"front": "git init", "back": "Initialize a new git repository"},
+        {"front": "git clone <url>", "back": "Clone a remote repository"},
+        {"front": "git status", "back": "Show working tree status (staged, modified, untracked)"},
+        {"front": "git add <file>", "back": "Stage changes for commit"},
+        {"front": "git commit -m 'msg'", "back": "Commit staged changes with a message"},
+        {"front": "git push", "back": "Upload local commits to remote repository"},
+        {"front": "git pull", "back": "Fetch and merge changes from remote"},
+        {"front": "git branch <name>", "back": "Create a new branch"},
+        {"front": "git checkout <branch>", "back": "Switch to a different branch"},
+        {"front": "git merge <branch>", "back": "Merge another branch into current branch"},
+        {"front": "git log", "back": "Show commit history"},
+        {"front": "git diff", "back": "Show changes between commits or working tree"}
+      ]
+    },
+    {
+      "id": "git-advanced",
+      "name": "Git Advanced (Gina Git)",
+      "lecture": "02-git-version-control",
+      "cards": [
+        {"front": "git reflog", "back": "Show all HEAD movements—your safety net for 'lost' commits"},
+        {"front": "git rebase <branch>", "back": "Reapply commits on top of another branch (linear history)"},
+        {"front": "git stash", "back": "Temporarily save uncommitted changes"},
+        {"front": "git cherry-pick <hash>", "back": "Apply a specific commit to current branch"},
+        {"front": "git reset --soft HEAD~1", "back": "Undo last commit, keep changes staged"},
+        {"front": "git reset --hard HEAD~1", "back": "Undo last commit, discard changes (dangerous!)"},
+        {"front": "git revert <hash>", "back": "Create a new commit that undoes a previous commit"},
+        {"front": ".gitignore", "back": "File specifying which files git should ignore"}
+      ]
+    },
+    {
+      "id": "api-basics",
+      "name": "API Fundamentals",
+      "lecture": "03-working-with-apis",
+      "cards": [
+        {"front": "API", "back": "Application Programming Interface—how software components communicate"},
+        {"front": "REST", "back": "Representational State Transfer—common API architectural style"},
+        {"front": "HTTP GET", "back": "Request method for retrieving data"},
+        {"front": "HTTP POST", "back": "Request method for creating new resources"},
+        {"front": "HTTP PUT", "back": "Request method for updating resources"},
+        {"front": "HTTP DELETE", "back": "Request method for removing resources"},
+        {"front": "Status 200", "back": "Success—request completed successfully"},
+        {"front": "Status 400", "back": "Bad Request—client error in request"},
+        {"front": "Status 401", "back": "Unauthorized—authentication required"},
+        {"front": "Status 404", "back": "Not Found—requested resource doesn't exist"},
+        {"front": "Status 500", "back": "Internal Server Error—something went wrong on server"},
+        {"front": "JSON", "back": "JavaScript Object Notation—common data format for APIs"}
+      ]
+    },
+    {
+      "id": "packaging",
+      "name": "Python Packaging (Vinny Virtual)",
+      "lecture": "04-python-packaging",
+      "cards": [
+        {"front": "python -m venv <name>", "back": "Create a virtual environment"},
+        {"front": "source env/bin/activate", "back": "Activate virtual environment (Unix/Mac)"},
+        {"front": "pip install <package>", "back": "Install a package in current environment"},
+        {"front": "pip freeze", "back": "List installed packages with versions"},
+        {"front": "requirements.txt", "back": "File listing project dependencies"},
+        {"front": "pyproject.toml", "back": "Modern Python project configuration file"},
+        {"front": "pip install -e .", "back": "Install package in editable/development mode"},
+        {"front": "__init__.py", "back": "File that makes a directory a Python package"},
+        {"front": "pip install build", "back": "Install the build tool for creating packages"},
+        {"front": "python -m build", "back": "Build a distributable package (wheel and sdist)"}
+      ]
+    },
+    {
+      "id": "testing",
+      "name": "Testing with pytest (Tessa Test)",
+      "lecture": "05-testing-with-ai",
+      "cards": [
+        {"front": "pytest", "back": "Run all tests in current directory"},
+        {"front": "pytest -v", "back": "Run tests with verbose output"},
+        {"front": "pytest test_file.py", "back": "Run tests in specific file"},
+        {"front": "pytest -k 'test_name'", "back": "Run tests matching name pattern"},
+        {"front": "@pytest.fixture", "back": "Decorator for reusable test setup functions"},
+        {"front": "assert x == y", "back": "Basic assertion—fails if not equal"},
+        {"front": "pytest.raises(Error)", "back": "Context manager to test that an exception is raised"},
+        {"front": "pytest --cov", "back": "Run tests with coverage report"},
+        {"front": "conftest.py", "back": "File for sharing fixtures across test files"},
+        {"front": "parametrize", "back": "Decorator to run test with multiple input sets"}
+      ]
+    },
+    {
+      "id": "code-quality",
+      "name": "Code Quality (Rita Readable)",
+      "lecture": "06-code-quality",
+      "cards": [
+        {"front": "black <file>", "back": "Auto-format Python code consistently"},
+        {"front": "ruff check <file>", "back": "Lint Python code for errors and style issues"},
+        {"front": "ruff format <file>", "back": "Format code with ruff (alternative to black)"},
+        {"front": "isort <file>", "back": "Sort import statements consistently"},
+        {"front": "mypy <file>", "back": "Check type hints for errors"},
+        {"front": "pre-commit", "back": "Tool to run checks automatically before commits"},
+        {"front": "DRY", "back": "Don't Repeat Yourself—avoid code duplication"},
+        {"front": "KISS", "back": "Keep It Simple, Stupid—prefer simple solutions"},
+        {"front": "Code smell", "back": "Surface indication of potential deeper problem in code"},
+        {"front": "Technical debt", "back": "Cost of shortcuts taken now that must be paid later"}
+      ]
+    },
+    {
+      "id": "classes",
+      "name": "Python Classes (Paula Pattern)",
+      "lecture": "07-python-classes",
+      "cards": [
+        {"front": "class MyClass:", "back": "Define a new class"},
+        {"front": "__init__(self, ...)", "back": "Constructor method—initializes new instances"},
+        {"front": "self", "back": "Reference to the current instance of the class"},
+        {"front": "instance.method()", "back": "Call a method on an instance"},
+        {"front": "@property", "back": "Decorator to make a method act like an attribute"},
+        {"front": "@staticmethod", "back": "Method that doesn't need instance or class reference"},
+        {"front": "@classmethod", "back": "Method that receives the class as first argument"},
+        {"front": "class Child(Parent):", "back": "Inheritance—Child inherits from Parent"},
+        {"front": "super()", "back": "Call a method from the parent class"},
+        {"front": "__str__(self)", "back": "Return string representation for print()"},
+        {"front": "__repr__(self)", "back": "Return unambiguous string representation"},
+        {"front": "Composition", "back": "'Has-a' relationship—object contains other objects"}
+      ]
+    },
+    {
+      "id": "github-collab",
+      "name": "GitHub Collaboration",
+      "lecture": "08-github-collaboration",
+      "cards": [
+        {"front": "Pull Request (PR)", "back": "Proposal to merge changes, enables code review"},
+        {"front": "Fork", "back": "Personal copy of someone else's repository"},
+        {"front": "Issue", "back": "Track bugs, features, and tasks on GitHub"},
+        {"front": "Code Review", "back": "Process of examining code for quality and correctness"},
+        {"front": "LGTM", "back": "Looks Good To Me—approving a PR"},
+        {"front": "Draft PR", "back": "Work-in-progress PR not ready for review"},
+        {"front": "Squash and merge", "back": "Combine all PR commits into one before merging"},
+        {"front": "Branch protection", "back": "Rules requiring reviews/checks before merging to main"},
+        {"front": "CODEOWNERS", "back": "File defining who reviews changes to specific paths"}
+      ]
+    },
+    {
+      "id": "github-actions",
+      "name": "GitHub Actions (Wendy Workflow)",
+      "lecture": "09-github-actions",
+      "cards": [
+        {"front": "Workflow", "back": "Automated process defined in .github/workflows/*.yml"},
+        {"front": "Job", "back": "Set of steps that run on the same runner"},
+        {"front": "Step", "back": "Individual task within a job"},
+        {"front": "Runner", "back": "Server that executes the workflow"},
+        {"front": "on: push", "back": "Trigger workflow when code is pushed"},
+        {"front": "on: pull_request", "back": "Trigger workflow on PR events"},
+        {"front": "uses: actions/checkout@v4", "back": "Action to check out repository code"},
+        {"front": "uses: actions/setup-python@v5", "back": "Action to set up Python environment"},
+        {"front": "run:", "back": "Execute a shell command in workflow"},
+        {"front": "needs: [job_name]", "back": "Make a job wait for another job to complete"},
+        {"front": "matrix", "back": "Run job with multiple configurations (Python versions, OS)"}
+      ]
+    },
+    {
+      "id": "documentation",
+      "name": "Documentation (Doc Douglas)",
+      "lecture": "10-documentation",
+      "cards": [
+        {"front": "Docstring", "back": "String literal documenting a module/class/function"},
+        {"front": "\"\"\"Description.\"\"\"", "back": "Triple-quoted string format for docstrings"},
+        {"front": "Type hint: def f(x: int) -> str:", "back": "Annotate parameter and return types"},
+        {"front": "Sphinx", "back": "Tool for generating documentation from docstrings"},
+        {"front": "README.md", "back": "Main documentation file for a repository"},
+        {"front": "CHANGELOG.md", "back": "File documenting changes between versions"},
+        {"front": "CONTRIBUTING.md", "back": "Guide for how to contribute to a project"},
+        {"front": "Napoleon", "back": "Sphinx extension for Google/NumPy style docstrings"},
+        {"front": "autodoc", "back": "Sphinx extension to auto-generate API docs from docstrings"},
+        {"front": "mkdocs", "back": "Alternative to Sphinx—simpler, Markdown-based"}
+      ]
+    },
+    {
+      "id": "mcp",
+      "name": "MCP (Morgan MCP)",
+      "lecture": "11-advanced-mcp",
+      "cards": [
+        {"front": "MCP", "back": "Model Context Protocol—standard for AI tool integration"},
+        {"front": "MCP Server", "back": "Program that exposes tools/resources to AI assistants"},
+        {"front": "MCP Client", "back": "AI assistant that connects to MCP servers"},
+        {"front": "Tool (MCP)", "back": "Function that the AI can call to perform actions"},
+        {"front": "Resource (MCP)", "back": "Data source the AI can read from"},
+        {"front": "Prompt (MCP)", "back": "Template that can be invoked by the AI"},
+        {"front": "stdio transport", "back": "MCP communication over standard input/output"},
+        {"front": "@server.tool()", "back": "Decorator to define an MCP tool"},
+        {"front": "mcp.types", "back": "Module containing MCP type definitions"}
+      ]
+    }
+  ]
+}
