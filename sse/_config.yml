@@ -6,9 +6,7 @@ logo: logo.png
 
 # Force re-execution of notebooks on each build
 execute:
-  execute_notebooks: auto
-  timeout: 120
-  allow_errors: true
+  execute_notebooks: "off"
 
 # Define the name of the latex output file for PDF builds
 latex:
