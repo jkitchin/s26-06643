@@ -2,7 +2,7 @@
 
 * Course Information
 
-- *Course:* 06-643 Creating Scientific Software with AI Coding Agents
+- *Course:* 06-643 Scientific Software Engineering with AI Coding Agents
 - *Semester:* Spring 2026, Half Semester
 - *Institution:* Carnegie Mellon University, Department of Chemical Engineering
 - *Instructor:* Professor John Kitchin (jkitchin@cmu.edu)
@@ -24,7 +24,7 @@ This course teaches modern software development practices for scientific researc
 |    6 | Documentation, Configuring and Extending AI Agents |
 |    7 | Project Presentations |
 
-Optional lectures cover Python classes, ethics/copyright/licensing, web apps, security, databases, CLI tools, and profiling/optimization.
+Optional lectures cover Python classes, ethics/copyright/licensing, web apps, security, databases, CLI tools, profiling/optimization, and uv (modern Python package management).
 
 * Getting Started
 
