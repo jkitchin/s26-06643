@@ -24,12 +24,19 @@ parts:
 
   - caption: Optional Lectures
     chapters:
-      - file: optional/07-python-classes/07-python-classes
+      - file: optional/python-classes/python-classes
+      - file: optional/ethics-copyright/ethics-copyright
+      - file: optional/web-apps/web-apps
+      - file: optional/security/security
+      - file: optional/databases/databases
+      - file: optional/cli-tools/cli-tools
+      - file: optional/profiling/profiling
 
   - caption: Assignments
     chapters:
       - file: assignments/index
         sections:
+          - file: assignments/participation
           - glob: assignments/a*
 
   - caption: About

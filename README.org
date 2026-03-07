@@ -1,0 +1,47 @@
+#+title: 06-643: Scientific Software Engineering with AI Coding Agents
+
+* Course Information
+
+- *Course:* 06-643 Creating Scientific Software with AI Coding Agents
+- *Semester:* Spring 2026, Half Semester
+- *Institution:* Carnegie Mellon University, Department of Chemical Engineering
+- *Instructor:* Professor John Kitchin (jkitchin@cmu.edu)
+- *Course website:* https://kitchingroup.cheme.cmu.edu/s26-06643/
+
+* About
+
+This course teaches modern software development practices for scientific research, with a focus on leveraging AI coding agents (Claude Code, GitHub Copilot, Codex, Gemini CLI, etc.) as collaborative tools. Students learn to build, test, document, and distribute Python packages while developing critical skills in evaluating and directing AI-generated code.
+
+* Topics
+
+| Week | Topics |
+|------+--------|
+|    1 | AI-Assisted Development, Terminals and Shells |
+|    2 | Git and Version Control, Working with APIs |
+|    3 | Python Packaging, Testing with AI |
+|    4 | Code Quality, Debugging and Profiling with AI |
+|    5 | GitHub Collaboration, CI/CD with GitHub Actions |
+|    6 | Documentation, Configuring and Extending AI Agents |
+|    7 | Project Presentations |
+
+Optional lectures cover Python classes, ethics/copyright/licensing, web apps, security, databases, CLI tools, and profiling/optimization.
+
+* Getting Started
+
+See the [[https://kitchingroup.cheme.cmu.edu/s26-06643/setup.html][Setup page]] for installation instructions.
+
+#+begin_src bash
+git clone https://github.com/jkitchin/s26-06643.git
+cd s26-06643/sse
+#+end_src
+
+* Building the Course Book
+
+The course materials are built with [[https://jupyterbook.org/][Jupyter Book]].
+
+#+begin_src bash
+pip install jupyter-book
+jupyter-book build sse/
+#+end_src
+
+The HTML output will be in =sse/_build/html/=.

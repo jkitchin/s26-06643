@@ -169,13 +169,14 @@ If any command fails, revisit the corresponding section above.
 
 ## Getting the Course Materials
 
-### Option A: One-Click Clone (Recommended)
+### Option A: Clone from VS Code (Recommended)
 
-Click this link to clone the course repository directly in VS Code:
-
-[Open in VS Code](vscode://vscode.git/clone?url=https://github.com/jkitchin/s26-06643.git)
-
-VS Code will ask you where to save the repository. Choose a location you'll remember (e.g., your home directory or a `courses` folder).
+1. Open VS Code
+2. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the Command Palette
+3. Type **"Git: Clone"** and select it
+4. Paste this URL: `https://github.com/jkitchin/s26-06643.git`
+5. Choose a location to save the repository (e.g., your home directory or a `courses` folder)
+6. When prompted, click **Open** to open the cloned repository in VS Code
 
 ### Option B: Clone from the Terminal
 

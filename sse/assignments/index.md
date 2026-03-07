@@ -2,28 +2,30 @@
 
 ## Overview
 
-Assignments reinforce lecture concepts through hands-on practice with AI coding agents.
+Assignments reinforce lecture concepts through hands-on practice with AI coding agents. Each assignment corresponds to one week of lectures (two lectures per week).
 
 **Each assignment has two components:**
-- **Technical (2/3)**: Does the code work correctly?
-- **Reflection (1/3)**: How did you collaborate with AI?
+- **Technical**: Does the code work correctly?
+- **Reflection**: How did you collaborate with AI?
+
+## Weekly Participation Journal
+
+The [Participation Journal](participation.ipynb) is a weekly reflective exercise where you document your experience with AI coding agents — which tools you used, what worked, what didn't, and what you learned. One entry is due each week.
 
 ## Assignment List
 
-| # | Title | Topics | Due |
-|---|-------|--------|-----|
-| [A1](a1-ai-exploration.ipynb) | AI Tool Exploration | Compare AI coding tools | Week 2 |
-| [A2](a2-api-package.ipynb) | API Package | Build OpenAlex wrapper with AI | Week 3 |
-| [A3](a3-testing-challenge.ipynb) | Testing Challenge | Achieve 95% coverage with AI tests | Week 4 |
-| [A4](a4-code-review.ipynb) | Code Review | Review and improve AI-generated code | Week 5 |
-| [A5](a5-open-source.ipynb) | Open Source Contribution | Contribute to a real project | Week 6 |
+| # | Title | Lectures | Topics |
+|---|-------|----------|--------|
+| [A1](a1-ai-exploration.ipynb) | AI + Terminal Foundations | L00, L01 | AI tools, plan-execute workflow, terminal navigation |
+| [A2](a2-api-package.ipynb) | Git + API Exploration | L02, L03 | Git workflow, OpenAlex API, context engineering |
+| [A3](a3-testing-quality.ipynb) | Package + Test | L04, L05 | Python packaging, AI-assisted testing |
+| [A4](a4-debugging-quality.ipynb) | Quality + Debugging | L06, L07 | Code quality tools, debugging with AI |
+| [A5](a5-collaboration-cicd.ipynb) | Collaboration + CI/CD | L08, L09 | Pull requests, GitHub Actions |
 
 ## Submission
 
 - Submit Jupyter notebooks via Canvas
 - Include all code, outputs, and reflection
-- Due at 11:59 PM on the due date
-- Late: -10% per day
 
 ## Collaboration Policy
 
