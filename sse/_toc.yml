@@ -35,6 +35,7 @@ parts:
       - file: optional/release-lifecycle/release-lifecycle
       - file: optional/scientific-computing/scientific-computing
       - file: optional/ai-human-factors/ai-human-factors
+      - file: optional/case-studies/case-studies
 
   - caption: Assignments
     chapters:
