@@ -12,11 +12,12 @@ After installing, open VS Code and verify it launches correctly.
 
 Install these extensions from the VS Code Extensions panel (`Ctrl+Shift+X` / `Cmd+Shift+X`):
 
-| Extension                  | Purpose                                     |
-|----------------------------|---------------------------------------------|
-| **Claude** (by Anthropic)  | AI coding agent integrated into VS Code     |
-| **Python** (by Microsoft)  | Python language support, debugging, linting |
-| **Jupyter** (by Microsoft) | Run and edit Jupyter notebooks in VS Code   |
+| Extension   | Purpose                                     |
+|-------------|---------------------------------------------|
+| **Claude**  | AI coding agent integrated into VS Code     |
+| **Python**  | Python language support, debugging, linting |
+| **Jupyter** | Run and edit Jupyter notebooks in VS Code   |
+
 
 To install an extension: open the Extensions panel, search by name, and click **Install**.
 
